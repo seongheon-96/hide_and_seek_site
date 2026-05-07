@@ -1,0 +1,20 @@
+# OS / editor cruft (also potential anonymity leaks — these files carry user/host metadata)
+.DS_Store
+.DS_store
+._*
+.AppleDouble
+.LSOverride
+Icon
+Icon?
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Editors
+.idea
+.vscode
+*.swp
+*~
+
+# Tooling
+.claude

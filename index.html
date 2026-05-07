@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Hide-and-Seek in Trajectories: Discovering Failure Signals for VLA Runtime Monitoring">
+  <meta name="keywords" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hide-and-Seek in Trajectories: Discovering Failure Signals for VLA Runtime Monitoring</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <!-- <link rel="icon" href="./static/images/favicon.svg"> -->
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+    <div class="navbar-menu">
+      <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
+        <a class="navbar-item" href="#">
+          <span class="icon">
+            <i class="fas fa-home"></i>
+          </span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-2 publication-title">Hide-and-Seek in Trajectories: Discovering Failure Signals for VLA Runtime Monitoring</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="mailto:seongheon_park@cs.wisc.edu">Seongheon Park</a><sup>1</sup>,
+              </span>
+              <span class="author-block">Wendi Li<sup>1</sup>,</span>
+              <span class="author-block">Changdae Oh<sup>1</sup>,</span>
+              <span class="author-block">Samuel Yeh<sup>1</sup>,</span>
+              <br>
+              <span class="author-block">Zsolt Kira<sup>2</sup>,</span>
+              <span class="author-block">Michael Hagenow<sup>1</sup>,</span>
+              <span class="author-block">Sharon Li</a><sup>1</sup></span>
+            </div>
+ 
+            <div class="is-size-6 publication-authors">
+              <span class="author-block"><sup>1</sup>University of Wisconsin&ndash;Madison,</span>
+              <span class="author-block"><sup>2</sup>Georgia Institute of Technology</span>
+              
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="https://github.com/deeplearning-wisc/hide_and_seek" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Coming Soon)</span>
+                  </a>
+                </span>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop is-full-width">
+      <div class="columns is-centered">
+        <div class="column is-full">
+          <figure class="image teaser-figure">
+            <img src="./static/images/fig1_3.png" alt="HNS teaser image">
+          </figure>
+        </div>
+      </div>
+      <div class="columns is-centered">
+        <h2 class="subtitle has-text-centered">
+            <strong>Hide-and-Seek</strong> discovers localized failure-indicative actions in VLA trajectories using only trajectory-level labels, achieving state-of-the-art multi-task failure detection performance.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              VVision-Language-Action (VLA) models enable robots to follow natural language instructions and generalize across diverse tasks, but they remain vulnerable to execution failures that compromise reliability in real-world deployment.
+              Detecting such failures during execution is therefore critical for the robust deployment of embodied systems.
+Existing failure detection methods either rely on expensive action resampling or external models, while alternatives propagate trajectory-level labels uniformly across every timestep, obscuring localized failure signals.
+In this paper, we propose <strong>Hide-and-Seek</strong>, a framework that formulates VLA failure detection as a coarsely supervised learning problem.
+By combining inter-trajectory and intra-trajectory contrastive objectives, Hide-and-Seek localizes failure-indicative actions and induces temporally structured failure signals from trajectory-level supervision alone, without any step-level annotation.
+We evaluate Hide-and-Seek on LIBERO, VLABench, and a real-world robotic platform across three representative VLA policies: OpenVLA, &pi;<sub>0</sub>, and &pi;<sub>0.5</sub>.
+Our method achieves state-of-the-art multi-task failure detection performance with a practical accuracy--timeliness trade-off under conformal prediction, and generalizes well to both seen and unseen tasks. 
+
+        
+            </p>
+          </div>
+        </div>
+      </div>
+      <!--/ Abstract. -->
+
+    </div>
+  </section>
+
+ <section class="hero is-light is-small">
+      <div class="hero-body has-text-centered">
+        <h1 class="title">
+          Hide-and-Seek: Coarsely Supervised Failure Detector for VLA Models
+        </h1>
+      </div>
+    </section>
+  
+    <section class="hero teaser">
+      <div class="container is-max-desktop is-full-width">
+        <div class="columns is-centered">
+          <div class="column is-full">
+            <figure class="image teaser-figure teaser-figure-spaced">
+              <img src="static/images/fig2_7.png" alt="Hide-and-Seek framework overview" />
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <section class="section">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column is-full-width">
+              <div class="content has-text-justified">
+                <p>
+                  We propose <strong>Hide-and-Seek</strong>, a lightweight runtime failure detector that draws a novel connection between coarsely supervised learning and embodied failure detection. Rather than propagating trajectory-level labels uniformly across timesteps, Hide-and-Seek seeks out where failures hide within largely normal behavior. The framework consists of 3 key ideas:
+                </p>
+                <ul>
+                  <li>
+                    <strong>Seeking Across Trajectories:</strong> An <em>inter-trajectory contrastive loss</em> enforces that the most failure-indicative step in a failure trajectory scores higher than the hardest false-positive step in a successful trajectory. This adaptively discovers the most salient failure signal across trajectories without assuming where the failure occurs, replacing uniform label propagation with a sharper, instance-level supervision signal.
+                  </li>
+                  <li>
+                    <strong>Seeking Within a Trajectory:</strong> An <em>intra-trajectory contrastive loss</em> sharpens the temporal boundary between normal execution and the failure phase by encouraging average post-onset scores to exceed average pre-onset scores, anchored at a proxy failure onset that emerges naturally from the score dynamics. This converts coarse trajectory-level supervision into a temporally structured failure signal, without any step-level annotation.
+                  </li>
+                  <li>
+                    <strong>Timely Runtime Monitoring:</strong> At deployment, Hide-and-Seek raises alarms via a time-varying threshold calibrated by functional conformal prediction. The detector achieves state-of-the-art performance with a practical accuracy&ndash;timeliness trade-off, running over 2,000&times; faster than VLM-based monitors.
+                  </li>
+                </ul>
+              </div>
+              <br />
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+  <section class="hero is-light is-small">
+    <div class="hero-body has-text-centered">
+      <h1 class="title"">
+        Quantitative Results
+      </h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column is-full-width">
+          <div class="content has-text-justified">
+            <p>
+              We evaluate Hide-and-Seek on two simulation benchmarks&mdash;<strong>LIBERO-10</strong> and <strong>VLABench</strong>&mdash;as well as a <strong>real-world UFactory xArm 6 platform</strong>, using three representative VLA policies spanning both autoregressive and flow-matching paradigms: <strong>OpenVLA</strong>, <strong>&pi;<sub>0</sub></strong>, and <strong>&pi;<sub>0.5</sub></strong>. We compare against 12 action-based failure detection baselines spanning OOD detection, multi-sampling, classifier-based, and token uncertainty methods, and report balanced accuracy (bACC), weighted accuracy (wACC), and time-weighted accuracy (TWA) on both seen and unseen tasks.
+            </p>
+          </div>
+
+          <div class="content has-text-justified">
+            <!-- <h3 class="is-3">LIBERO-10 with OpenVLA and &pi;<sub>0</sub></h3></h3> -->
+            <!-- <p>
+              [Result 1 description.]
+            </p> -->
+            <img src="./static/images/exp1.png" />
+          </div>
+
+          <div class="content has-text-justified">
+            <!-- <h3 class="is-3">[Result 2 heading]</h3>
+            <p>
+              [Result 2 description.]
+            </p> -->
+            <img src="./static/images/exp2.png" />
+          </div>
+
+
+    <section class="hero is-light is-small">
+      <div class="hero-body has-text-centered">
+        <h1 class="title">
+          Qualitative Results
+        </h1>
+      </div>
+    </section>
+    <br>
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column">
+          <div class="content">
+            <!-- <h3 class="is-3">[Qualitative results 2 heading]</h3> -->
+            <p>
+              Hide-and-Seek's failure scores align with observable failure indicators in the visual scene. The discovered onset point <em>t</em><sub>onset</sub> aligns with subtle early indicators of failure (e.g., a book starting to slip from the gripper), while the peak point <em>t</em><sub>max</sub> corresponds to the most salient and critical failure event (e.g., the robot dropping the object)&mdash;matching human intuition about when failure occurs. A failure is declared at the earliest timestep where the failure score (<span style="color:#e85a8e;">red curve</span>) exceeds the conformal threshold (<span style="color:#9bc88a;">green region</span>). The failure score remains consistently low across successful trajectories and rises sharply at the onset of failure.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column content">
+            <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+            <source src="static/videos/pi0/task0_success.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered"><span class="succ-text">Success</span></p>
+        </div>
+        <div class="column content">
+            <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+            <source src="static/videos/pi0/task0_fail.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered"><span class="fail-text">Failure</span>: Robot slips the alphabet soup and collides with nearby objects.</p>
+        </div>
+      </div>
+
+      <div class="columns is-centered">
+        <div class="column content">
+            <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+            <source src="static/videos/pi0/task8_success.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered"><span class="succ-text">Success</span></p>
+        </div>
+        <div class="column content">
+            <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+            <source src="static/videos/pi0/task8_fail.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered"><span class="fail-text">Failure</span>: Robot mis-contacts the top of the moka pot and drifts away.</p>
+        </div>
+      </div>
+      
+      <div class="columns is-centered">
+        <div class="column content">
+            <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+            <source src="static/videos/pi0/task2_success.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered"><span class="succ-text">Success</span></p>
+        </div>
+        <div class="column content">
+            <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+            <source src="static/videos/pi0/task2_fail.mp4" type="video/mp4">
+            </video>
+            <p class="has-text-centered"><span class="fail-text">Failure</span>: Robot misgrasps the moka pot and drifts away. </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container is-max-desktop">
+    <div class="columns is-centered">
+      <div class="column content">
+          <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+          <source src="static/videos/OpenVLA/task7_success.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered"><span class="succ-text">Success</span></p>
+      </div>
+      <div class="column content">
+          <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+          <source src="static/videos/OpenVLA/task7_fail.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered"><span class="fail-text">Failure</span>: Robot fails to grasp the alphabet soup and stops moving.</p>
+      </div>
+    </div>
+
+    <div class="columns is-centered">
+      <div class="column content">
+          <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+          <source src="static/videos/OpenVLA/task9_success.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered"><span class="succ-text">Success</span></p>
+      </div>
+      <div class="column content">
+          <video poster="" controls muted loop playsinline autoplay height="100%" width="100%">
+          <source src="static/videos/OpenVLA/task9_fail.mp4" type="video/mp4">
+          </video>
+          <p class="has-text-centered"><span class="fail-text">Failure</span>: Robot gets stuck after placing the mug, then drifts away without closing the microwave.</p>
+      </div>
+    </div>
+  </div>
+
+  </section>
+
+
+  <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>[.]</code></pre>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">
+          <img alt="Creative Commons License" style="border-width:0"
+            src="https://i.creativecommons.org/l/by-sa/4.0/88x31.png" />
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              This website is licensed under a <a rel="license"
+                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0
+                International License</a>, and adapted from <a href="https://github.com/vla-safe/vla-safe.github.io">SAFE website template</a> which is originated from <a href="https://github.com/nerfies/nerfies.github.io">Nerfies website template</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>

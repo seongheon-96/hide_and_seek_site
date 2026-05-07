@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# Refuse to commit if local git identity is missing.
+ACTUAL_EMAIL=$(git config user.email)
+ACTUAL_NAME=$(git config user.name)
+
+if [[ -z "$ACTUAL_EMAIL" ]]; then
+  echo "ERROR: commit blocked — user.email is not set."
+  echo "Run: git config user.email \"you@example.com\""
+  exit 1
+fi
+
+if [[ -z "$ACTUAL_NAME" ]]; then
+  echo "ERROR: commit blocked — user.name is not set."
+  echo "Run: git config user.name \"Your Name\""
+  exit 1
+fi
+
+# Refuse if a GPG signing config is on (could leak a personal key id)
+if [[ "$(git config commit.gpgsign)" == "true" ]]; then
+  echo "ERROR: commit.gpgsign is true. Run: git config commit.gpgsign false"
+  exit 1
+fi
+
+exit 0
